@@ -11,7 +11,7 @@ $rootDir = $PSScriptRoot
 # All repos to inspect (sia-core shown for awareness, marked read-only)
 $repos = @(
     @{ Name = "root (SIA-Project)"; Path = $rootDir;                          ReadOnly = $false },
-    @{ Name = "sia-docs";           Path = Join-Path $rootDir "SIA-DOCS";     ReadOnly = $false },
+    @{ Name = "sia-docs";           Path = Join-Path $rootDir "sia-docs";     ReadOnly = $false },
     @{ Name = "sia-research";       Path = Join-Path $rootDir "sia-research"; ReadOnly = $false },
     @{ Name = "sia-chats";          Path = Join-Path $rootDir "sia-chats";    ReadOnly = $false },
     @{ Name = "sia-core (manual)";  Path = Join-Path $rootDir "sia-core";     ReadOnly = $true  }

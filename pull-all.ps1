@@ -11,7 +11,7 @@ $rootDir = $PSScriptRoot
 # Repos to pull: root + managed children (sia-core excluded)
 $repos = @(
     @{ Name = "root (SIA-Project)"; Path = $rootDir },
-    @{ Name = "sia-docs";           Path = Join-Path $rootDir "SIA-DOCS" },
+    @{ Name = "sia-docs";           Path = Join-Path $rootDir "sia-docs" },
     @{ Name = "sia-research";       Path = Join-Path $rootDir "sia-research" },
     @{ Name = "sia-chats";          Path = Join-Path $rootDir "sia-chats" }
 )
