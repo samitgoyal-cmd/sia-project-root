@@ -1,7 +1,7 @@
 # ============================================================
 # pull-all.ps1
 # Pulls latest changes for root repo + managed child repos.
-# sia-core is intentionally EXCLUDED — manage it manually.
+# sia-core is intentionally EXCLUDED -- manage it manually.
 # ============================================================
 
 $ErrorActionPreference = "Stop"
@@ -18,7 +18,7 @@ $repos = @(
 
 Write-Host ""
 Write-Host "===== PULL-ALL =====================================" -ForegroundColor Cyan
-Write-Host "  sia-core is SKIPPED — manage it manually." -ForegroundColor Yellow
+Write-Host "  sia-core is SKIPPED -- manage it manually." -ForegroundColor Yellow
 Write-Host "====================================================" -ForegroundColor Cyan
 Write-Host ""
 

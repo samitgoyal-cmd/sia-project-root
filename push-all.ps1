@@ -1,8 +1,8 @@
 # ============================================================
 # push-all.ps1
 # Pushes already-committed changes for root repo + managed child repos.
-# Does NOT auto-commit anything — you must commit manually first.
-# sia-core is intentionally EXCLUDED — manage it manually.
+# Does NOT auto-commit anything -- you must commit manually first.
+# sia-core is intentionally EXCLUDED -- manage it manually.
 # ============================================================
 
 $ErrorActionPreference = "Stop"
@@ -19,7 +19,7 @@ $repos = @(
 
 Write-Host ""
 Write-Host "===== PUSH-ALL =====================================" -ForegroundColor Cyan
-Write-Host "  sia-core is SKIPPED — manage it manually." -ForegroundColor Yellow
+Write-Host "  sia-core is SKIPPED -- manage it manually." -ForegroundColor Yellow
 Write-Host "  Only repos with clean, committed state will push." -ForegroundColor Yellow
 Write-Host "====================================================" -ForegroundColor Cyan
 Write-Host ""
@@ -52,7 +52,7 @@ foreach ($repo in $repos) {
         # Check for uncommitted changes
         $statusOutput = git status --porcelain 2>&1
         if ($statusOutput) {
-            Write-Host "   SKIP: Uncommitted changes present — commit manually before pushing." -ForegroundColor Yellow
+            Write-Host "   SKIP: Uncommitted changes present -- commit manually before pushing." -ForegroundColor Yellow
             Write-Host "   Dirty files:" -ForegroundColor Yellow
             $statusOutput | ForEach-Object { Write-Host "     $_" -ForegroundColor Yellow }
         } else {

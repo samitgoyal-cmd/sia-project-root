@@ -1,7 +1,7 @@
 # ============================================================
 # repo-status.ps1
 # Shows git status for root repo + all managed child repos.
-# Also shows sia-core status (read-only — for awareness only).
+# Also shows sia-core status (read-only -- for awareness only).
 # ============================================================
 
 $ErrorActionPreference = "Stop"
@@ -22,7 +22,7 @@ Write-Host "===== REPO STATUS ==================================" -ForegroundCol
 Write-Host ""
 
 foreach ($repo in $repos) {
-    $label = if ($repo.ReadOnly) { "$($repo.Name) [MANUAL — not bulk synced]" } else { $repo.Name }
+    $label = if ($repo.ReadOnly) { "$($repo.Name) [MANUAL -- not bulk synced]" } else { $repo.Name }
     Write-Host "-- [$label] -----------------------------------------" -ForegroundColor $(if ($repo.ReadOnly) { "Yellow" } else { "Cyan" })
 
     if (-not (Test-Path $repo.Path)) {
