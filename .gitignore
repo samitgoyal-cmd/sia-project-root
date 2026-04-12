@@ -1,0 +1,46 @@
+# ============================================================
+# SIA-Project Root Repo — .gitignore
+# This root repo tracks ONLY workspace-level control files.
+# All child repos below are excluded from root tracking.
+# ============================================================
+
+# --- Child repos (have their own git histories) ---
+sia-core/
+sia-research/
+sia-chats/
+SIA-DOCS/
+
+# --- Local-only / not synced via root repo ---
+SIA-Exchange/
+
+# --- Zip / archive artifacts ---
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# --- OS / system junk ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# --- Editor / IDE artifacts ---
+.vscode/
+.idea/
+*.suo
+*.user
+*.sublime-workspace
+
+# --- Python / Node build artifacts (if any scripts added later) ---
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+.env
+.env.local
+
+# --- Windows temp files ---
+~$*
+*.tmp
+*.bak
