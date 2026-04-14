@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Read(//c/Users/total/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/a8655db2-7bf4-4ade-af7f-fd86e58cd8b5/b5750cbc-e596-40bc-b9d4-04eecc416250/skills/xlsx/**)",
+      "Bash(python -c ':*)"
+    ]
+  }
+}
