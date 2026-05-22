@@ -154,6 +154,32 @@ Do not write new Pass1, W1, or W2 skills until their target artifact structures 
 Do not assume `sia-research` is synced on the second laptop until its pending push blocker is confirmed resolved.
 Do not regenerate SEM functional slice documents from partial rules while the SEM master rules sheet is still under manual review.
 
+## Functional Requirements Manual Review Process
+
+Samit will manually review SEM and SCM Functional Behavior Specs section by section in chat with Codex. The review objective is to turn the readable behavior specs into fuller customer-style functional requirements covering screens, dashboards, reports, forms, notifications, jobs, permissions, edge cases, configuration, audit, and cross-module contracts.
+
+Process guide:
+
+- `C:\SIA-Project\SIA-DOCS\00_project_control\manual_reviews\Functional_Requirements_Review_Process_Guide.md`
+
+Running decision log:
+
+- `C:\SIA-Project\SIA-DOCS\00_project_control\manual_reviews\Functional_Review_Decision_Log.md`
+
+Manual-review baselines accepted:
+
+- SEM: `C:\SIA-Project\SIA-DOCS\02_modules\SEM\02_design\SEM_Functional_Behavior_Spec_v1_2_1_DRAFT.md`
+- SCM: `C:\SIA-Project\SIA-DOCS\02_modules\SCM\02_functional_slice\SCM_Functional_Behavior_Spec_v1_1_1_DRAFT.md`
+
+During future review chats, append accepted decisions to the running log immediately. Do not edit frozen files or master rules during discussion. Consolidate decisions first, then generate richer draft updates outside `frozen/`.
+
+Next exact step for the next new session:
+
+- Load continuity files first.
+- Start Samit's section-by-section manual review discussion for SEM or SCM, whichever Samit chooses.
+- For each accepted decision, append a new `FRD-YYYYMMDD-###` entry to `Functional_Review_Decision_Log.md`.
+- Do not create SEM/SCM replacement frozen specs yet.
+
 ## Session Starter Instruction
 
 When a new Codex session begins, first ask:

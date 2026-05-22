@@ -27,6 +27,93 @@ Append newest entries at the top.
 
 ### Session Date
 
+- Date: 2026-05-22 (behavior-spec build + review-baseline freeze; Claude Code)
+- Session owner: Claude Code + Samit
+- Main focus: build/validate/reconcile SEM & SCM Functional Behavior Specs against the frozen master rules, then review-baseline-freeze both pending Samit decision logs
+- What was completed:
+  - SEM: `SEM_Functional_Behavior_Spec_v1_2_DRAFT.md` + revision report; then light reconciliation `v1.2.1` (10 master-rules coverage additions) + reconciliation report. Also `SEM_Business_Rules_Functional_Strategy_Review_v1.xlsx` (477 rules, 22 strategy cols) + report.
+  - SCM: `SCM_Functional_Behavior_Spec_v1_1_DRAFT.md` + revision report; then light reconciliation `v1.1.1` (completed C7 allocation priority per SCM-MR-0184) + reconciliation report.
+  - **Review-baseline froze** SEM v1.2.1 and SCM v1.1.1: freeze banner added to each draft + per-doc `*_FREEZE_NOTE.md` created. (Complements the Codex review-workflow / `Functional_Review_Decision_Log.md` set up in the entries below.)
+- What was decided:
+  - SEM v1.2.1 and SCM v1.1.1 are the locked manual-review baselines. **Review-baseline (process) freeze of advisory artifacts only** — NOT a platform-authority freeze; nothing moved into `frozen/`; functional-slice v1.3 pause unchanged.
+  - Next behavior-spec iterations: SEM MFBS v1.3 / SCM MFBS v1.2 (behavior-spec line), each from its frozen baseline + Samit's per-module decision log (dashboards, data-entry screens, reports, notification email/SMS, batch jobs, etc.).
+  - No frozen file or master rules workbook/CSV edited; no SEM/SCM v1.3 created.
+- What is still open:
+  - Awaiting Samit's SEM and SCM decision logs (per module).
+  - SEM open items: v1.2.1 §16.B (B-1…B-11), §16.C (X-1…X-5).
+  - SCM open items: v1.1.1 §24.B/§24.C (D-1…D-11, X-1…X-4) + optional spot-check A-1…A-6 in its reconciliation report.
+- Exact next step:
+  - Hold both baselines frozen. On each decision log, produce the next behavior-spec version by surgical patching from the frozen baseline + decision log, validated against the frozen master rules; do not edit the frozen baselines in place.
+- Files updated/created:
+  - SEM: `02_design/SEM_Functional_Behavior_Spec_v1_2_DRAFT.md`, `..._v1_2_Revision_Report.md`, `..._v1_2_1_DRAFT.md`, `..._v1_2_1_Reconciliation_Report.md`, `..._v1_2_1_FREEZE_NOTE.md`; `10_archive/SEM_Business_Rules_Functional_Strategy_Review_v1.xlsx` (+ report, + build script)
+  - SCM: `02_functional_slice/SCM_Functional_Behavior_Spec_v1_1_DRAFT.md`, `..._v1_1_Revision_Report.md`, `..._v1_1_1_DRAFT.md`, `..._v1_1_1_Reconciliation_Report.md`, `..._v1_1_1_FREEZE_NOTE.md`
+  - `codex-control/10_CURRENT_STATE.md`, `11_ACTIVE_NEXT_STEPS.md`, `20_SESSION_HANDOFF_LOG.md`
+
+---
+
+### Session Date
+
+- Date: 2026-05-22
+- Session owner: Codex
+- Main focus: session close after establishing functional requirements review workflow
+- What was completed:
+  - loaded and followed `SAMITSPROMPT\session_close_prompt.md`
+  - confirmed SEM manual-review input: `SIA-DOCS\02_modules\SEM\02_design\SEM_Functional_Behavior_Spec_v1_2_1_DRAFT.md`
+  - confirmed SCM manual-review input: `SIA-DOCS\02_modules\SCM\02_functional_slice\SCM_Functional_Behavior_Spec_v1_1_1_DRAFT.md`
+  - created/verified `Functional_Requirements_Review_Process_Guide.md`
+  - created/verified `Functional_Review_Decision_Log.md`
+  - updated continuity files for next-session resume
+- What was decided:
+  - this chat session should close here
+  - next session will handle manual review and decisions interactively
+  - Codex should log accepted review decisions continuously in the functional review decision log
+- What is still open:
+  - Samit's manual review of SEM and SCM behavior specs
+  - discussion of section-level additions such as screens, dashboards, reports, notifications, jobs, edge cases, configs, and cross-module contracts
+  - any CORE manual-review baseline selection
+  - later consolidation into enriched draft specs; no replacement frozen specs yet
+- Exact next step:
+  - in the next session, load continuity files and begin with Samit's chosen SEM/SCM section review
+- Files updated:
+  - `C:\SIA-Project\codex-control\10_CURRENT_STATE.md`
+  - `C:\SIA-Project\codex-control\11_ACTIVE_NEXT_STEPS.md`
+  - `C:\SIA-Project\codex-control\20_SESSION_HANDOFF_LOG.md`
+
+---
+
+### Session Date
+
+- Date: 2026-05-22
+- Session owner: Codex
+- Main focus: establish SEM/SCM functional requirements manual-review process
+- What was completed:
+  - accepted SEM manual-review baseline: `SIA-DOCS\02_modules\SEM\02_design\SEM_Functional_Behavior_Spec_v1_2_1_DRAFT.md`
+  - accepted SCM manual-review baseline: `SIA-DOCS\02_modules\SCM\02_functional_slice\SCM_Functional_Behavior_Spec_v1_1_1_DRAFT.md`
+  - created the review process guide: `SIA-DOCS\00_project_control\manual_reviews\Functional_Requirements_Review_Process_Guide.md`
+  - created the running decision log: `SIA-DOCS\00_project_control\manual_reviews\Functional_Review_Decision_Log.md`
+  - added initial process decision `FRD-20260522-001`
+- What was decided:
+  - Samit will manually review SEM/SCM section by section and discuss comments in chat with Codex
+  - Codex should actively think through missing requirements, not only record notes
+  - decisions should be logged continuously for later consolidation
+  - final enriched docs should behave like customer-style functional requirements, including screens, dashboards, reports, forms, notifications, jobs, permissions, edge cases, config, audit, and cross-module contracts
+- What is still open:
+  - Samit's section-by-section manual review of SEM and SCM
+  - any CORE equivalent review process/baseline selection
+  - consolidation of decisions into next SEM/SCM draft versions after review
+- Exact next step:
+  - when Samit begins reviewing a section, discuss it interactively and append accepted decisions to `Functional_Review_Decision_Log.md`
+- Files updated:
+  - `C:\SIA-Project\SIA-DOCS\00_project_control\manual_reviews\Functional_Requirements_Review_Process_Guide.md`
+  - `C:\SIA-Project\SIA-DOCS\00_project_control\manual_reviews\Functional_Review_Decision_Log.md`
+  - `C:\SIA-Project\codex-control\10_CURRENT_STATE.md`
+  - `C:\SIA-Project\codex-control\11_ACTIVE_NEXT_STEPS.md`
+  - `C:\SIA-Project\codex-control\20_SESSION_HANDOFF_LOG.md`
+
+---
+
+### Session Date
+
 - Date: 2026-05-22 (visual-atlas session)
 - Session owner: Claude Code (Opus) + Samit
 - Main focus: generate visual-atlas + enriched slice-review-deck artifacts for SCM and CORE (parallel to the earlier SEM set); commit and push all generated artifacts to `SIA-DOCS`

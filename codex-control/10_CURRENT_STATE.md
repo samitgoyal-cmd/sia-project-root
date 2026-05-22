@@ -8,6 +8,15 @@
 - codegen/Pass1 process-definition work remains open at the artifact-spec level
 - SEM module: `SEM_Master_Rules_Sheet_FULL_v5_traceability.xlsx` is the current authoritative working version covering ALL 973 rules across all 7 ORDs. Adds full rule-to-implementation traceability (Pass1/Pass2/Pass3 maps, Implementation_Status, Remaining_Work, Validation_Notes). Requires Founder review of open items before freeze.
 
+## Behavior-Spec Review Baselines — REVIEW-BASELINE FROZEN 2026-05-22
+
+- Two **Functional Behavior Specs** (human-readable, business-functional) are now the locked **manual-review baselines**, validated against the frozen master rules:
+  - SEM: `02_modules/SEM/02_design/SEM_Functional_Behavior_Spec_v1_2_1_DRAFT.md` (freeze note: `..._v1_2_1_FREEZE_NOTE.md`)
+  - SCM: `02_modules/SCM/02_functional_slice/SCM_Functional_Behavior_Spec_v1_1_1_DRAFT.md` (freeze note: `..._v1_1_1_FREEZE_NOTE.md`)
+- These are **review-baseline (process) freezes of advisory artifacts** — NOT platform-authority freezes. Nothing was moved into any `frozen/` directory; the SEM/SCM functional-slice v1.3 pause is unchanged.
+- Awaiting Samit's per-module **decision logs** (dashboards, data-entry screens, reports, notification email/SMS, batch jobs, plus add/change/delete decisions). Next behavior-spec iterations will be SEM MFBS v1.3 / SCM MFBS v1.2, produced from the frozen baseline + decision log via surgical patching. Do not edit the frozen baselines in place.
+- Open items remain visible: SEM v1.2.1 §16.B/§16.C; SCM v1.1.1 §24.B/§24.C + optional spot-check A-1…A-6.
+
 ## Current Update - 2026-05-22
 
 - SEM and SCM now both have frozen/readable functional slice specs available as Markdown and DOCX for manual review:
@@ -137,6 +146,14 @@ Current mitigation:
 - root control repo and `SIA-DOCS` are already available for the second laptop to pull cleanly
 - the SEM role/system decisions were translated into file-backed approved markdown artifacts before ORD planning
 - the reviewed SEM markdown pack and the ORD mapping summary now exist as stable intermediate checkpoints in `sia-chats`
+- Functional behavior manual-review baselines now exist for SEM and SCM and are accepted for Samit's interactive review:
+  - SEM: `C:\SIA-Project\SIA-DOCS\02_modules\SEM\02_design\SEM_Functional_Behavior_Spec_v1_2_1_DRAFT.md`
+  - SCM: `C:\SIA-Project\SIA-DOCS\02_modules\SCM\02_functional_slice\SCM_Functional_Behavior_Spec_v1_1_1_DRAFT.md`
+- Manual review will be conducted section-by-section in chat, with Codex logging accepted decisions into:
+  - `C:\SIA-Project\SIA-DOCS\00_project_control\manual_reviews\Functional_Review_Decision_Log.md`
+- Review process guide:
+  - `C:\SIA-Project\SIA-DOCS\00_project_control\manual_reviews\Functional_Requirements_Review_Process_Guide.md`
+- Current chat session is closing after establishing the functional requirements review process. Next session should begin the actual manual review discussion and decision logging.
 
 Remaining immediate need:
 
