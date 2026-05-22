@@ -27,6 +27,92 @@ Append newest entries at the top.
 
 ### Session Date
 
+- Date: 2026-05-22 (visual-atlas session)
+- Session owner: Claude Code (Opus) + Samit
+- Main focus: generate visual-atlas + enriched slice-review-deck artifacts for SCM and CORE (parallel to the earlier SEM set); commit and push all generated artifacts to `SIA-DOCS`
+- What was completed:
+  - SEM visual atlas + decks were generated and pushed earlier in commit `615f37f` (32 PNGs + SEM docx outputs + SEM BRM archive).
+  - SCM module artifacts generated under `02_modules/SCM/08_diagrams/`:
+    - `SCM_Visual_Atlas.md` — 53 Mermaid diagrams (2 global + 3 per slice × 17 slices: mind map, functional flow, §3D enforcement chain)
+    - `print/SCM_atlas_rendered-1..53.png` — all 53 rendered PNGs
+    - `print/SCM_Visual_Atlas_print.html`, `print/SCM_Visual_Atlas_docx.md`, `SCM_Visual_Atlas.docx`
+    - `print/SCM_Slice_Review_src.md` + `_docx.md` + `SCM_Slice_Review_v1.docx` — enriched 17-slice review deck (components & role stereotypes, component×entity interaction matrix, data write registry, control/governance, sync-vs-async, integration seams, REVIEW_NEEDED flags)
+    - render/build scripts: `render_scm_atlas.py`, `build_scm_print.py`, `build_scm_review_docx.py`
+    - Committed as `3935811` (65 files).
+  - CORE module artifacts generated under `02_modules/CORE/08_diagrams/`:
+    - `CORE_Visual_Atlas.md` — 62 Mermaid diagrams (2 global + 3 per slice × 20 slices). CORE is infrastructure, so the 3rd per-slice diagram is a **contract/guard flow** (FAIL IF / MANDATORY invariants) instead of an actor enforcement chain; global diagram #2 is the 20-step `plugins_loaded` boot-order & dependency map.
+    - `print/CORE_atlas_rendered-1..62.png` — all 62 rendered PNGs
+    - `print/CORE_Visual_Atlas_print.html`, `print/CORE_Visual_Atlas_docx.md`, `CORE_Visual_Atlas.docx`
+    - `print/CORE_Slice_Review_src.md` + `_docx.md` + `CORE_Slice_Review_v1.docx` — enriched 20-slice review deck (components & stereotypes, authoritative tables, write registry, call model, methods/events, FAIL-IF contracts, dependency map, 8-invariant × 20-slice checklist, REVIEW_NEEDED flags)
+    - render/build scripts: `render_core_atlas.py`, `build_core_print.py`, `build_core_review_docx.py`
+    - Committed as `1e8cc81` (74 files).
+  - Pushed both commits to `origin/master` (`615f37f..1e8cc81`) on `samitgoyal-cmd/SIA-DOCS`.
+  - Confirmed the working tree is fully clean and all BRM docs (36 files in SEM/SCM `10_archive/`) were already tracked — no uncommitted "BRM prep" work remained.
+- What was decided:
+  - All atlas + review-deck artifacts are **reference/advisory only**; the frozen functional-slice specs govern on any conflict. Regenerate if a spec changes.
+  - No-invention rule honored throughout: every component/entity/event/rule name is taken verbatim from the frozen spec; unresolved boundaries are marked `REVIEW_NEEDED` rather than invented.
+  - For CORE (infrastructure, not domain workflow) the per-slice 3rd diagram is a contract/guard flow, not a §3D actor enforcement chain.
+  - The SCM/SEM/CORE `v1.3` pause is unchanged — these visual artifacts are review aids, not a v1.3 rewrite.
+- What is still open:
+  - Unchanged from the consolidation-plan entry below: Samit's manual review of SEM/SCM/CORE functional specs + the ORD-derived business-language rules; no `v1.3` until all edits are collected.
+  - Optional: visual QA of the 53 SCM + 62 CORE rendered PNGs (a few dense flow/contract diagrams may benefit from layout tuning if used in print).
+  - REVIEW_NEEDED items captured in the decks (e.g., SCM trust-gate cross-module contract, AWB-void rollback contract, Zoho sync retry policy; CORE MANDATORY_INVARIANT handler list, shared `wp_sia_webhook_log` writer, 101-vs-103 component count) feed the same manual-review collection.
+- Exact next step:
+  - Manual review collection continues (unchanged). The SEM, SCM, and CORE visual atlases + review decks are now available as review aids alongside the frozen specs. Do not generate any `v1.3` until Samit has gathered all functional-spec and business-rule review edits.
+- Files updated:
+  - `02_modules/SCM/08_diagrams/**` (atlas, 53 PNGs, print HTML, atlas docx, review deck v1.docx, scripts) — commit `3935811`
+  - `02_modules/CORE/08_diagrams/**` (atlas, 62 PNGs, print HTML, atlas docx, review deck v1.docx, scripts) — commit `1e8cc81`
+  - `C:\SIA-Project\codex-control\10_CURRENT_STATE.md`
+  - `C:\SIA-Project\codex-control\11_ACTIVE_NEXT_STEPS.md`
+  - `C:\SIA-Project\codex-control\20_SESSION_HANDOFF_LOG.md`
+
+---
+
+### Session Date
+
+- Date: 2026-05-22
+- Session owner: Codex + Samit
+- Main focus: record SCM/SEM/CORE manual-review consolidation plan before any v1.3 rewrite
+- What was completed:
+  - Located the latest frozen SEM and SCM functional slice specs and created readable DOCX copies in the same frozen folders.
+  - Opened both DOCX files in Microsoft Word for manual reading.
+  - Reviewed Claude's SCM deep consistency review output and the follow-up evidence triage.
+  - Reviewed/recorded Claude's SEM deep consistency review output:
+    - `C:\SIA-Project\SIA-DOCS\02_modules\SEM\07_audits\SEM_v1_2_Deep_Consistency_Review.md`
+  - Reviewed/recorded Claude's CORE functional-slice + Pass1 deep consistency review output:
+    - `C:\SIA-Project\SIA-DOCS\02_modules\CORE\07_audits\CORE_v1_2_Pass1_Deep_Consistency_Review.md`
+  - Confirmed that the evidence triage should remain advisory and should not immediately trigger a SCM `v1.3` rewrite.
+- What was decided:
+  - Do not generate SCM `v1.3`, SEM `v1.3`, or CORE `v1.3` yet.
+  - Keep `C:\SIA-Project\SIA-DOCS\02_modules\SCM\07_audits\SCM_v1_2_Deep_Review_Evidence_Triage.md` as a preserved advisory checkpoint.
+  - Keep `C:\SIA-Project\SIA-DOCS\02_modules\SEM\07_audits\SEM_v1_2_Deep_Consistency_Review.md` as a preserved advisory checkpoint.
+  - Keep `C:\SIA-Project\SIA-DOCS\02_modules\CORE\07_audits\CORE_v1_2_Pass1_Deep_Consistency_Review.md` as a preserved advisory checkpoint.
+  - Samit will manually review SCM, SEM, and CORE functional/authority specs.
+  - Samit will also manually review the SEM and SCM business-language rules mapped from ORD rules into functional-slice language.
+  - Manual business-rule changes may require corresponding functional-slice changes.
+  - Consolidated `v1.3` drafting should happen only after all audit findings, manual review edits, business-rule changes, authority-version decisions, naming decisions, and cross-module contract decisions are collected.
+  - SEM audit headline: PASS WITH CONDITIONS; no immediate v1.3; key pre-Pass1 confirmations are freeze-status cleanup and the 11 BLOCKED CRITICAL rule indicators in the v6.1 workbook.
+  - CORE audit headline: PASS WITH CONDITIONS; no immediate v1.3; key gates are Gate-2 Founder approval and reconciliation of the 101 vs 103 component-count authority.
+- What is still open:
+  - Samit's manual review of SCM functional slice spec.
+  - Samit's manual review of SEM functional slice spec.
+  - Samit's manual review of CORE functional slice / CORE authority docs.
+  - Samit's manual review of SEM and SCM business-language rules generated/mapped from ORD rules.
+  - Final decision packet for authority versions, service naming, ExceptionRecord lifecycle, trust-gate/appointment contract, and institution actor handling.
+  - SEM follow-up/evidence triage if desired, especially for BR-01 workbook blocked-status contradiction and CORE/SEM gamification boundary.
+  - CORE follow-up if desired: identify the two runtime components behind the 103-to-101 correction and decide whether 101 or 103 is the binding count.
+  - Later consolidated SCM/SEM patch drafting and freeze process.
+- Exact next step:
+  - Continue manual review collection. Do not ask Claude/Codex to write SCM `v1.3`, SEM `v1.3`, or CORE `v1.3` until Samit has gathered all functional-spec and business-rule review edits.
+- Files updated:
+  - `C:\SIA-Project\codex-control\10_CURRENT_STATE.md`
+  - `C:\SIA-Project\codex-control\11_ACTIVE_NEXT_STEPS.md`
+  - `C:\SIA-Project\codex-control\20_SESSION_HANDOFF_LOG.md`
+
+---
+
+### Session Date
+
 - Date: 2026-04-14
 - Session owner: Claude Code
 - Main focus: V5 traceability extension — rule-to-implementation traceability workbook

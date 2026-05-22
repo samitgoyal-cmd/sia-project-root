@@ -12,7 +12,39 @@ Before starting new design work on another machine, verify:
 - `sia-research` is pulled if its pending `.docx` / push blocker has been resolved
 - `sia-core` remains manual/separate
 
-### Step 1 - SEM rules review and freeze
+### Step 1 - Manual review consolidation gate before any SCM/SEM v1.3 rewrite
+
+Current 2026-05-22 decision:
+
+- Do **not** generate SCM `v1.3` yet.
+- Preserve the SCM evidence-triage audit output as advisory input:
+  - `C:\SIA-Project\SIA-DOCS\02_modules\SCM\07_audits\SCM_v1_2_Deep_Review_Evidence_Triage.md`
+- Do **not** generate SEM `v1.3` yet.
+- Preserve the SEM deep consistency review as advisory input:
+  - `C:\SIA-Project\SIA-DOCS\02_modules\SEM\07_audits\SEM_v1_2_Deep_Consistency_Review.md`
+- Do **not** generate CORE `v1.3` yet.
+- Preserve the CORE functional-slice + Pass1 deep review as advisory input:
+  - `C:\SIA-Project\SIA-DOCS\02_modules\CORE\07_audits\CORE_v1_2_Pass1_Deep_Consistency_Review.md`
+- Founder/manual review must happen first across:
+  - SCM frozen functional slice spec
+  - SEM frozen functional slice spec
+  - CORE functional slice / CORE authority docs
+  - SEM and SCM business-language rules mapped from ORD rules into functional-slice language
+- Manual business-rule review may modify rule language or rule meaning; any such changes must be reconciled into the functional slice specs before a new frozen version.
+- Consolidated `v1.3` should be drafted only after all audit findings, manual review edits, business-rule changes, and cross-module decisions are collected.
+- SEM audit gates to track before Pass1:
+  - SC-01: freeze-status hygiene contradiction in SEM spec (`FROZEN` vs stale `DRAFT` / `not a frozen document` text)
+  - BR-01: confirm whether the 11 BLOCKED CRITICAL SEM v6.1 workbook indicators are stale/resolved, then clean the workbook/status text if needed
+- CORE audit gates to track before Pass2/codegen and module binding:
+  - RDY-03: Gate-2 Founder approval for CORE Pass2/codegen remains pending
+  - P1-01: reconcile authoritative component count (101 corrected Pass1 inventory vs 103 design/cert count)
+  - FH-01/FH-03: refresh Pass1 authority references from v4.1 to v4.2.1/v4.2 and clarify Pass1 freeze state/certificate
+
+Review aids now available (do NOT treat as v1.3 inputs):
+
+- Visual atlases + enriched slice-review decks exist for all three modules under `02_modules/{SEM,SCM,CORE}/08_diagrams/`. Use them alongside the frozen specs during manual review. They are advisory/reference; regenerate from the frozen spec if a spec changes. Each carries `REVIEW_NEEDED` flags that should be folded into the manual-review collection.
+
+### Step 2 - SEM rules review and freeze
 
 Current exact SEM checkpoint:
 
@@ -75,7 +107,7 @@ Next exact SEM step after Founder review:
 - Produce v3 (frozen) version
 - Then generate the SEM functional slice spec from the frozen v3 rules
 
-### Step 2 - Freeze Pass1 deliverable specs
+### Step 3 - Freeze Pass1 deliverable specs
 
 Define and review:
 
@@ -90,14 +122,14 @@ These should answer:
 - which mappings are deferred to Pass2 / Pass2.5
 - what observability/event relevance flags Pass1 must capture
 
-### Step 3 - After Pass1 specs are reviewed
+### Step 4 - After Pass1 specs are reviewed
 
 Use the frozen Pass1 artifact specs to determine:
 
 - whether any existing skill can be reused/refined for Pass1 workbook generation/review
 - what new Pass1 generator/reviewer skills actually need to be written
 
-### Step 4 - Then move to gate-package specs
+### Step 5 - Then move to gate-package specs
 
 Define and review:
 
@@ -117,6 +149,7 @@ W3/W4 can remain later unless needed sooner.
 
 Freeze artifact/rule specs first, then downstream generation/review skills and derived functional slices.
 
+Do not write SCM `v1.3`, SEM `v1.3`, or any replacement frozen functional slice until Samit's manual functional-spec and business-rule reviews are complete and all edits can be consolidated.
 Do not write new Pass1, W1, or W2 skills until their target artifact structures are explicitly locked.
 Do not assume `sia-research` is synced on the second laptop until its pending push blocker is confirmed resolved.
 Do not regenerate SEM functional slice documents from partial rules while the SEM master rules sheet is still under manual review.

@@ -8,6 +8,40 @@
 - codegen/Pass1 process-definition work remains open at the artifact-spec level
 - SEM module: `SEM_Master_Rules_Sheet_FULL_v5_traceability.xlsx` is the current authoritative working version covering ALL 973 rules across all 7 ORDs. Adds full rule-to-implementation traceability (Pass1/Pass2/Pass3 maps, Implementation_Status, Remaining_Work, Validation_Notes). Requires Founder review of open items before freeze.
 
+## Current Update - 2026-05-22
+
+- SEM and SCM now both have frozen/readable functional slice specs available as Markdown and DOCX for manual review:
+  - SEM: `C:\SIA-Project\SIA-DOCS\02_modules\SEM\02_design\frozen\SIA_SEM_Functional_Slice_v1_2.md`
+  - SEM DOCX: `C:\SIA-Project\SIA-DOCS\02_modules\SEM\02_design\frozen\SIA_SEM_Functional_Slice_v1_2.docx`
+  - SCM: `C:\SIA-Project\SIA-DOCS\02_modules\SCM\02_functional_slice\frozen\SIA_SCM_Functional_Slice_v1_2_FINAL.md`
+  - SCM DOCX: `C:\SIA-Project\SIA-DOCS\02_modules\SCM\02_functional_slice\frozen\SIA_SCM_Functional_Slice_v1_2_FINAL.docx`
+- A deep SCM functional-slice consistency review was run externally, then evidence-triaged into:
+  - `C:\SIA-Project\SIA-DOCS\02_modules\SCM\07_audits\SCM_v1_2_Deep_Review_Evidence_Triage.md`
+- A deep SEM functional-slice consistency review was run externally and written to:
+  - `C:\SIA-Project\SIA-DOCS\02_modules\SEM\07_audits\SEM_v1_2_Deep_Consistency_Review.md`
+- A deep CORE functional-slice + Pass1 consistency review was run externally and written to:
+  - `C:\SIA-Project\SIA-DOCS\02_modules\CORE\07_audits\CORE_v1_2_Pass1_Deep_Consistency_Review.md`
+- The SCM evidence triage, SEM deep review, and CORE deep review are advisory only. They should be preserved as review checkpoints, not treated as instructions to immediately rewrite SCM, SEM, or CORE.
+- Do not generate SCM `v1.3`, SEM `v1.3`, or CORE `v1.3` yet. The plan is to defer any consolidated `v1.3` draft until after:
+  - Founder/manual review of SCM functional slice spec
+  - Founder/manual review of SEM functional slice spec
+  - Founder/manual review of CORE functional slice / CORE authority docs
+  - manual review of SEM and SCM business-language rules mapped from ORD rules into functional-slice language
+  - collection of all edits, rule modifications, authority-version decisions, naming decisions, and cross-module contract decisions
+- The intended next major revision is a consolidated `v1.3` pass that incorporates all validated audit findings and all manual review edits together.
+- SEM audit headline: PASS WITH CONDITIONS; no immediate SEM `v1.3`; genuine pre-Pass1 gates are freeze-status hygiene (SC-01) and confirmation/cleanup of 11 BLOCKED CRITICAL rule indicators in the SEM v6.1 master rules workbook (BR-01).
+- CORE audit headline: PASS WITH CONDITIONS; no immediate CORE `v1.3`; true gates are Gate-2 Founder approval for CORE Pass2/codegen and reconciliation of CORE component count authority (101 corrected Pass1 inventory vs 103 design/cert count).
+
+### Visual atlas + review-deck artifacts (later 2026-05-22 session)
+
+- All three modules now have a **visual atlas** (Mermaid diagrams → rendered PNGs + print HTML + DOCX) and an **enriched slice-review deck** (DOCX), generated from the frozen functional-slice specs and committed/pushed to `SIA-DOCS`:
+  - SEM: `02_modules/SEM/08_diagrams/` — 32 PNGs (commit `615f37f`)
+  - SCM: `02_modules/SCM/08_diagrams/` — 53 PNGs, `SCM_Slice_Review_v1.docx` (commit `3935811`)
+  - CORE: `02_modules/CORE/08_diagrams/` — 62 PNGs, `CORE_Slice_Review_v1.docx` (commit `1e8cc81`)
+- Per-slice pattern: mind map + functional flow + (SEM/SCM) §3D enforcement chain / (CORE) contract-guard flow. Each module folder has reproducible `render_*` and `build_*` Python scripts.
+- These are **reference/advisory only** — frozen specs govern; regenerate if a spec changes. They are review aids for the manual-review collection, NOT a `v1.3` rewrite.
+- `origin/master` is up to date through commit `1e8cc81`. Working tree clean; all BRM archive docs already tracked.
+
 ## Confirmed Foundations
 
 - Architecture compliance rulebook and platform architecture remain the top technical authorities
@@ -49,6 +83,8 @@ The current intended design direction is:
 ## Current Important Decisions
 
 - continuity remains file-backed
+- SCM, SEM, and CORE v1.3 drafting are explicitly paused as of 2026-05-22; keep the audit outputs as advisory input until manual SEM/SCM/CORE and business-rule reviews are complete.
+- Manual review may modify business-language rules derived from ORD-to-business-rule mapping; those rule changes may require corresponding functional-slice changes before any new frozen version is produced.
 - the process must remain reusable across SCM / SEM / SUPPORT
 - W1/W2/W3/W4 are now explicit gates in the operating system:
   - W1 after frozen Pass3 and before Stage 4 workbook generation
